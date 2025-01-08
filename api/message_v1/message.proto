@@ -6,6 +6,7 @@ option go_package = "github.com/vakhrushevk/message_service/pkg/message_v1;messa
 
 service MessageService {
   rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+  rpc GetAllMessages(GetAllMessagesRequest) returns (GetAllMessagesResponse);
 }
 
 message Message {
@@ -20,4 +21,12 @@ message SendMessageRequest {
 
 message SendMessageResponse {
   int64 message_id = 1;
+}
+
+message GetAllMessagesRequest {
+  int64 chat_id = 1;
+}
+
+message GetAllMessagesResponse {
+  repeated Message messages = 1;
 }

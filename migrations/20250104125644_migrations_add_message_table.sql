@@ -2,7 +2,7 @@
 -- +goose StatementBegin
 CREATE SCHEMA IF NOT EXISTS message_service;
 CREATE TABLE message_service.message (
-                          id UUID PRIMARY KEY,
+                          id SERIAL PRIMARY KEY,
                           chat_id integer not null ,
                           sender_id integer not null ,
                           content TEXT NOT NULL,
